@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vineelahelm 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vineelahelm
+  template:
+    metadata:
+      labels:
+        app: vineelahelm 
+    spec:
+      containers:
+        - name: vineelahelm 
+          image: azurecicdacr.azurecr.io/vineelahelm
+          ports:
+          - containerPort: 80
