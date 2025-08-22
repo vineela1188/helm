@@ -19,7 +19,7 @@ variables:
   imagePullSecret: 'azurecicdacr1581cc10-auth'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'helm'
 
 
 stages:
