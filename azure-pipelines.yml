@@ -31,6 +31,12 @@ stages:
     pool:
        name: helm
     steps:
+    - scripts: |
+        whoami
+        id
+        ls -l /var/run/docker.sock || true
+        docker version || true
+      displayName: "check docker access"
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
