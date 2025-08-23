@@ -29,14 +29,15 @@ stages:
   - job: Build
     displayName: Build
     pool:
-       name: helm
+      name: helm
     steps:
     - script: |
         whoami
         id
         ls -l /var/run/docker.sock || true
         docker version || true
-      displayName: "check docker access"
+      displayName: Check Docker access
+
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
@@ -47,7 +48,7 @@ stages:
         tags: |
           $(tag)
 
-    - upload: manifests
+    - publish: manifests
       artifact: manifests
 
 - stage: Deploy
