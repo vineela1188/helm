@@ -31,7 +31,7 @@ stages:
     pool:
        name: helm
     steps:
-    - scripts: |
+    - script: |
         whoami
         id
         ls -l /var/run/docker.sock || true
